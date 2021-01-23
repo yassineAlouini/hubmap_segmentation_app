@@ -4,7 +4,9 @@ iglovikov_helper_functions
 numpy
 pillow
 streamlit
-segmentation_models_pytorch
 # To have the same as during training, otherwise pickle fails.
 pytorch-lightning==1.1.3
 pytorch-toolbelt==0.4.0
+segmentation-models-pytorch==0.1.3
+torch==1.7.1
+torchvision==0.8.2
