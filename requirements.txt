@@ -1,0 +1,7 @@
+opencv-python-headless==4.2.0.32
+albumentations
+iglovikov_helper_functions
+numpy
+pillow
+streamlit
+segmentation_models_pytorch
