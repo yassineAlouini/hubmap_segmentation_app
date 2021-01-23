@@ -23,9 +23,10 @@ MODEL_PATH = Path(__file__).parent / "model.pth"
 
 def load_model() -> nn.Module:
     model = Unet(encoder_name="timm-efficientnet-b3", classes=1, encoder_weights=None)
-    state_dict = torch.load(MODEL_PATH)["state_dict"]
-    state_dict = rename_layers(state_dict, {"model.": ""})
-    model.load_state_dict(state_dict)
+    # TODO: While working on a fix, don't load for now :p
+    # state_dict = torch.load(MODEL_PATH)["state_dict"]
+    # state_dict = rename_layers(state_dict, {"model.": ""})
+    # model.load_state_dict(state_dict)
     return model
 
 
