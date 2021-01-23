@@ -155,3 +155,6 @@ websocket-client==0.57.0
 Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 yarl==1.6.3
+
+# Try to add this library?
+pickle5

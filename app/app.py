@@ -15,6 +15,7 @@ from iglovikov_helper_functions.dl.pytorch.utils import rename_layers
 
 from segmentation_models_pytorch import Unet
 from pathlib import Path
+import pickle5 as pickle
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
 
@@ -24,9 +25,9 @@ MODEL_PATH = Path(__file__).parent / "model.pth"
 def load_model() -> nn.Module:
     model = Unet(encoder_name="timm-efficientnet-b3", classes=1, encoder_weights=None)
     # TODO: While working on a fix, don't load for now :p
-    # state_dict = torch.load(MODEL_PATH)["state_dict"]
-    # state_dict = rename_layers(state_dict, {"model.": ""})
-    # model.load_state_dict(state_dict)
+    state_dict = torch.load(MODEL_PATH)["state_dict"]
+    state_dict = rename_layers(state_dict, {"model.": ""})
+    model.load_state_dict(state_dict)
     return model
 
 
